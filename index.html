@@ -2,6 +2,7 @@
 <html lang="sr">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       Nikola – Odgušenje Kanalizacije Beograd | Surčin, Altina | 060 060 97 22
@@ -700,71 +701,6 @@
         color: var(--cyan);
       }
 
-      .form-card {
-        background: var(--card);
-        border: 1px solid rgba(0, 194, 255, 0.1);
-        border-radius: 16px;
-        padding: 2.5rem;
-      }
-      .form-title {
-        font-weight: 700;
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-      }
-      .form-group {
-        margin-bottom: 1.2rem;
-      }
-      label {
-        font-size: 0.83rem;
-        color: var(--gray);
-        display: block;
-        margin-bottom: 0.4rem;
-      }
-      input,
-      textarea,
-      select {
-        width: 100%;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        color: var(--white);
-        font-family: "DM Sans", sans-serif;
-        font-size: 0.95rem;
-        padding: 0.75rem 1rem;
-        outline: none;
-        transition: border-color 0.2s;
-      }
-      input:focus,
-      textarea:focus,
-      select:focus {
-        border-color: var(--cyan);
-      }
-      textarea {
-        resize: vertical;
-        min-height: 100px;
-      }
-      select option {
-        background: var(--card);
-      }
-
-      .form-submit {
-        width: 100%;
-        background: var(--accent);
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        font-family: "DM Sans", sans-serif;
-        font-weight: 700;
-        font-size: 1rem;
-        padding: 0.9rem;
-        cursor: pointer;
-        transition: background 0.2s, transform 0.15s;
-        margin-top: 0.5rem;
-      }
-      .form-submit:hover {
-        background: #e05a00;
-        transform: translateY(-2px);
-      }
 
       /* ── HITNA TRAKA ─────────────────────────────── */
       .hitna-traka {
@@ -1336,44 +1272,6 @@
               <div class="c-value">24 sata / 7 dana u nedelji</div>
             </div>
           </div>
-        </div>
-
-        <div class="form-card">
-          <div class="form-title">📋 Pošaljite upit</div>
-          <div class="form-group">
-            <label>Ime i prezime</label>
-            <input type="text" placeholder="Vaše ime..." />
-          </div>
-          <div class="form-group">
-            <label>Telefon</label>
-            <input type="tel" placeholder="06X XXX XXXX" />
-          </div>
-          <div class="form-group">
-            <label>Vrsta problema</label>
-            <select>
-              <option value="">-- Odaberite --</option>
-              <option>Odgušenje odvoda u kupatilu</option>
-              <option>Odgušenje kuhinjskog odvoda</option>
-              <option>Odgušenje WC šolje</option>
-              <option>Vanjska kanalizacija</option>
-              <option>Video inspekcija</option>
-              <option>Hydrojet čišćenje</option>
-              <option>Septička jama – kamion 7 m³</option>
-              <option>Septička jama – kamion 20 m³</option>
-              <option>WOMA – hidrojet čišćenje cevi</option>
-              <option>Ostalo</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Opis problema (opciono)</label>
-            <textarea placeholder="Opišite ukratko problem..."></textarea>
-          </div>
-          <button
-            class="form-submit"
-            onclick="alert('Hvala! Kontaktiraćemo vas uskoro.')"
-          >
-            📨 Pošalji upit
-          </button>
         </div>
       </div>
     </section>
