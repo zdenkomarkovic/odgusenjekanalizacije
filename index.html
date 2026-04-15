@@ -824,6 +824,76 @@
           box-shadow: 0 6px 40px rgba(255, 107, 0, 0.7);
         }
       }
+      /* ── HAMBURGER / MOBILE NAV ─────────────────── */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 18px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        z-index: 200;
+      }
+      .hamburger span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: var(--white);
+        border-radius: 2px;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+        nav {
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          position: fixed;
+          top: 68px;
+          left: 0;
+          width: 100%;
+          background: rgba(10, 22, 40, 0.97);
+          backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(0, 194, 255, 0.15);
+          padding: 1rem 5vw 1.5rem;
+          z-index: 150;
+        }
+        nav.open {
+          display: flex;
+        }
+        nav a {
+          margin-left: 0;
+          padding: 0.75rem 0;
+          font-size: 1rem;
+          border-bottom: 1px solid rgba(255,255,255,0.07);
+          width: 100%;
+        }
+        nav a:last-child {
+          border-bottom: none;
+        }
+        .header-cta {
+          margin-left: 0;
+          margin-top: 0.75rem;
+          width: 100%;
+          text-align: center;
+        }
+      }
     </style>
   </head>
   <body>
@@ -841,14 +911,33 @@
           >Odgušenje <span style="color: var(--cyan)">Kanalizacije</span></span
         >
       </div>
-      <nav>
-        <a href="#usluge">Usluge</a>
-        <a href="#zasto">O nama</a>
-        <a href="#recenzije">Recenzije</a>
-        <a href="#kontakt">Kontakt</a>
-        <a class="header-cta" href="tel:060060 9722">📞 Hitni poziv</a>
+      <button class="hamburger" id="hamburger" aria-label="Otvori meni">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-menu">
+        <a href="#usluge" class="nav-link">Usluge</a>
+        <a href="#zasto" class="nav-link">O nama</a>
+        <a href="#recenzije" class="nav-link">Recenzije</a>
+        <a href="#kontakt" class="nav-link">Kontakt</a>
+        <a class="header-cta nav-link" href="tel:060060 9722">📞 Hitni poziv</a>
       </nav>
     </header>
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navMenu.classList.toggle('open');
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          navMenu.classList.remove('open');
+        });
+      });
+    </script>
 
     <!-- HERO -->
     <section class="hero" id="pocetna">
