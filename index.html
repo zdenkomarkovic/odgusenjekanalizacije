@@ -998,7 +998,7 @@
   </head>
   <body>
     <!-- STICKY PHONE -->
-    <a class="sticky-phone" href="tel:060060 9722" title="Pozovi nas">📞</a>
+    <a class="sticky-phone" href="tel:0600609722" onclick="return gtag_report_conversion('tel:0600609722');" title="Pozovi nas">📞</a>
 
     <!-- HEADER -->
     <header>
@@ -1021,7 +1021,7 @@
         <a href="#zasto" class="nav-link">O nama</a>
         <a href="#recenzije" class="nav-link">Recenzije</a>
         <a href="#kontakt" class="nav-link">Kontakt</a>
-        <a class="header-cta nav-link" href="tel:060060 9722">📞 Hitni poziv</a>
+        <a class="header-cta nav-link" href="tel:0600609722" onclick="return gtag_report_conversion('tel:0600609722');">📞 Hitni poziv</a>
       </nav>
     </header>
     <script>
@@ -1054,7 +1054,7 @@
           troškova.
         </p>
         <div class="hero-btns">
-          <a class="btn-primary" href="tel:060060 9722">📞 Pozovite odmah</a>
+          <a class="btn-primary" href="tel:0600609722" onclick="return gtag_report_conversion('tel:0600609722');">📞 Pozovite odmah</a>
           <a class="btn-secondary" href="#usluge">🔧 Naše usluge</a>
         </div>
         <div class="hero-stats">
@@ -1082,7 +1082,7 @@
           Surčin, Altina, Zemun, Beograd i okolina – dolazimo bez odlaganja.
         </p>
       </div>
-      <a class="hitna-tel" href="tel:060060 9722">📞 060 060 97 22</a>
+      <a class="hitna-tel" href="tel:0600609722" onclick="return gtag_report_conversion('tel:0600609722');">📞 060 060 97 22</a>
     </div>
 
     <!-- USLUGE -->
@@ -1421,7 +1421,7 @@
             <div>
               <div class="c-label">Telefon (24/7)</div>
               <div class="c-value">
-                <a href="tel:060060 9722">060 060 97 22</a>
+                <a href="tel:0600609722" onclick="return gtag_report_conversion('tel:0600609722');">060 060 97 22</a>
               </div>
             </div>
           </div>
@@ -1490,7 +1490,7 @@
       <div class="footer-col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="tel:060060 9722">📞 060 060 97 22</a></li>
+          <li><a href="tel:0600609722" onclick="return gtag_report_conversion('tel:0600609722');">📞 060 060 97 22</a></li>
           <li>
             <a href="mailto:ndmitrovic97@gmail.com"
               >✉️ ndmitrovic97@gmail.com</a
@@ -1505,5 +1505,21 @@
       © 2025 Odgušenje Kanalizacije Nikola. Sva prava zadržana. Profesionalno
       odgušenje kanalizacije.
     </div>
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16881485914/E2zSCPfL358cENqQ3PE-',
+        'value': 1.0,
+        'currency': 'RSD',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
   </body>
 </html>
